@@ -100,6 +100,9 @@ def createPoFromDict(language_code='', string_table={}):
 if __name__ == '__main__':
     if len(sys.argv) > 1:
         ROOTDIR = sys.argv[1] + '/'
+
+    if not SHEET_ID or not SHEET_NAME:
+        sys.exit('Sheet ID or name not provided!')
     
     r = requests.get(SOURCE_URL)
     
